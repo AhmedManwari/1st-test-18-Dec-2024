@@ -1,5 +1,6 @@
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import LeadForm from "./LeadForm";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   dateStyle: "medium",
@@ -45,6 +46,10 @@ export default async function LeadsPage() {
               View the leads assigned to your account.
             </p>
           </div>
+        </div>
+
+        <div className="mt-6">
+          <LeadForm />
         </div>
 
         <div className="mt-6 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">

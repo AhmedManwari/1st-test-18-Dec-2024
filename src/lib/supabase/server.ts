@@ -12,9 +12,9 @@ function getSupabaseEnv() {
   return { supabaseUrl, supabaseAnonKey };
 }
 
-export function createSupabaseServerClient() {
+export async function createSupabaseServerClient() {
   const { supabaseUrl, supabaseAnonKey } = getSupabaseEnv();
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
 
   return createServerClient(supabaseUrl, supabaseAnonKey, {
     cookies: {
